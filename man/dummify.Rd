@@ -41,6 +41,7 @@ Josh Pasek, Ph.D. Candidate in Communication at Stanford University (www.joshpas
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+require(anesrake)
 data("anes04")
 
 anes04$agecats <- cut(anes04$age, c(17, 25,35,45,55,65, 99))
