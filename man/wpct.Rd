@@ -20,23 +20,11 @@ wpct(x, weight, na.rm=TRUE)
 If \code{na.rm} is true, missing data will be dropped.  If \code{na.rm} is false, missing data will return an error.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 A table object of length equal to the number of separate values of \code{x}.
 }
 \author{
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 test <- c(1,1,1,1,1,1,2,2,2,3,3,3,4,4)

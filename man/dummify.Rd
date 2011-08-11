@@ -19,26 +19,11 @@ dummify(x, show.na=FALSE)
 If \code{show.na} is 'TRUE', output will include a column idicating the cases that are missing.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 \code{dummify} returns a matrix with a number of rows equal to the length of \code{x} and a number of columns equal to the number of levels of \code{x}.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 require(anesrake)

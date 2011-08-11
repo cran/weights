@@ -24,21 +24,14 @@ wtd.cor(x, y=NULL, weight=NULL, collapse=TRUE)
 \code{collapse} is an indicator for whether the data should be collapsed to a simpler form if either x or y is a vector instead of a matrix.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 A list with matrices for the estimated correlation coefficient, the standard error on that correlation coefficient, the t-value for that correlation coefficient, and the p value for the significance of the correlation.  If the list can be simplified, simplification will be done.
 }
 \author{
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
-\note{
-%%  ~~further notes~~
-}
 \seealso{
 \code{\link{stdz}}
-\code{\link{wtd.partial.cor}}
 \code{\link{wtd.t.test}}
 \code{\link{wtd.chi.sq}}
 }
