@@ -25,7 +25,7 @@ wtd.t.test <- function(x, y=0, weight=NULL, weighty=NULL, samedata=TRUE){
     se <- sx/sqrt(n)
     t <- (mx-y)/se
     df <- n-1
-    p.value <- (1-pt(abs(t), n-1))*2
+    p.value <- (1-pt(abs(t), df))*2
     coef <- c(t, df, p.value)
     out2 <- c(dif, mx, y, se)
     names(coef) <- c("t.value", "df", "p.value")
@@ -41,7 +41,7 @@ wtd.t.test <- function(x, y=0, weight=NULL, weighty=NULL, samedata=TRUE){
     sxy <- sqrt((vx/n)+(vy/n2))
     df <- (((vx/n)+(vy/n2))^2)/((((vx/n)^2)/(n-1))+((vy/n2)^2/(n2-1)))
     t <- (mx-my)/sxy
-    p.value <- (1-pt(abs(t), n-1))*2
+    p.value <- (1-pt(abs(t), df))*2
     coef <- c(t, df, p.value)
     out2 <- c(dif, mx, my, sxy)
     names(coef) <- c("t.value", "df", "p.value")
