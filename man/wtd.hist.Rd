@@ -122,7 +122,7 @@ wtd.hist(x, breaks = "Sturges",
     \code{breaks} are all the same.}
 }
 \author{
-Josh Pasek, Ph.D. Candidate in Communication at Stanford University (www.joshpasek.com) was responsible for the updates to the original hist function necessary to implement weighted counts.
+Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com) was responsible for the updates to the original hist function necessary to implement weighted counts.
 }
 \examples{
 var1 <- c(1:100)

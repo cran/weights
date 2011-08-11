@@ -1,6 +1,23 @@
-wtd.chi.sq <- function(var1, var2, var3=NULL, weight=NULL){
+wtd.chi.sq <- function(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.missing.levels=TRUE){
+  require(gdata)
   if(is.null(weight)){
     weight <- rep(1, length(var1))
+  }
+  if(na.rm==TRUE){
+    filt <- (!is.na(var1) & !is.na(var2))
+    if(!is.null(var3))
+      filt <- (!is.na(var1) & !is.na(var2) & !is.na(var3))
+    var1 <- var1[filt]
+    var2 <- var2[filt]
+    if(!is.null(var3))
+      var3 <- var3[filt]
+    weight <- weight[filt]
+  }
+  if(drop.missing.levels==TRUE){
+    var1 <- drop.levels(var1)
+    var2 <- drop.levels(var2)
+    if(!is.null(var3))
+      var3 <- drop.levels(var3)
   }
   var12set <- unlist(summary(xtabs(weight~var1+var2))[c("statistic", "parameter", "p.value")])
   names(var12set) <- c("Chisq", "df", "p.value")
@@ -22,8 +39,3 @@ wtd.chi.sq <- function(var1, var2, var3=NULL, weight=NULL){
   }
   out
 }
-
-
-
-
-       
