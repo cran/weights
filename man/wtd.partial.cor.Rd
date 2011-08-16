@@ -31,7 +31,7 @@ wtd.partial.cor(x, y=NULL, preds=NULL, weight=NULL, collapse=TRUE)
 A list with matrices for the estimated correlation coefficient, the standard error on that correlation coefficient, the t-value for that correlation coefficient, and the p value for the significance of the correlation.  If the list can be simplified, simplification will be done.
 }
 \author{
-Josh Pasek, Ph.D. Candidate in Communication at Stanford University (www.joshpasek.com) 
+Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

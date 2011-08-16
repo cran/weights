@@ -24,7 +24,7 @@ stdz(x, weight=NULL)
 A vector of length equal to x with a (weighted) mean of zero and a (weighted) standard deviation of 1.
 }
 \author{
-Josh Pasek, Ph.D. Candidate in Communication at Stanford University (www.joshpasek.com) 
+Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
 \note{
 %%  ~~further notes~~

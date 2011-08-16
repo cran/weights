@@ -27,7 +27,7 @@ If \code{na.rm} is true, missing data will be dropped.  If \code{na.rm} is false
 A table object of length equal to the number of separate values of \code{x}.
 }
 \author{
-Josh Pasek, Ph.D. Candidate in Communication at Stanford University (www.joshpasek.com) 
+Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
 \note{
 %%  ~~further notes~~
