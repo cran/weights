@@ -1,4 +1,4 @@
-db9799b7cf2af11be7c8c6b09d28f965 *DESCRIPTION
+70472bc2c0a82ea41cd6e6c8c31513e8 *DESCRIPTION
 77d1acf1bb2c167fc74775c1ea26cb82 *NAMESPACE
 8cc896c58c82b2625bc072d7ac318971 *R/dummify.r
 5c3e037f8482e02fc34528785d7e7538 *R/nalevs.r
@@ -12,7 +12,7 @@ dfda28942badf331b30dbf58a325445e *R/wpct.r
 bb5a56271c5a0e6b1f77c603f326af89 *R/wtd.cor.r
 d8c27734b9dca6112bccc12ea0c67bbe *R/wtd.hist.R
 de073dd0573266759b5f00a5c5377a5c *R/wtd.partial.cor.r
-d81ac2a64d0e910e95fe32218bbf7e40 *R/wtd.t.test.r
+b98893859c31c8429e1ebde4030b7557 *R/wtd.t.test.r
 201fe126c1f6cd32c9c884ff75976862 *man/dummify.Rd
 a0a5de9824db856c4578a63760f67e43 *man/nalevs.Rd
 1f6bdf8ba41c19f14b1b7deb16033beb *man/rd.Rd
