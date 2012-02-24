@@ -26,25 +26,15 @@ wtd.t.test(x, y=0, weight=NULL, weighty=NULL, samedata=TRUE)
 \code{samedata} is an optional identifier for whether the \code{x} and \code{y} data come from the same data stream for a two-sample test.  If true, \code{wtd.t.test} assumes that \code{weighty} should equal \code{weightx} if (1) \code{weighty} is unspecified, and (2) the lengths of the two vectors are identical.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 A list element with an identifier for the test; coefficients for the t value, degrees of freedom, and p value of the t-test; and additional statistics of potential interest.
 }
 \author{
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{stdz}}
 \code{\link{wtd.cor}}
-\code{\link{wtd.partial.cor}}
 \code{\link{wtd.chi.sq}}
 }
 \examples{

@@ -17,24 +17,14 @@ stdz(x, weight=NULL)
 \code{weight} is an optional vector of weights to be used to determining the weighted mean and variance for standardization.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 A vector of length equal to x with a (weighted) mean of zero and a (weighted) standard deviation of 1.
 }
 \author{
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{wtd.cor}}
-\code{\link{wtd.partial.cor}}
 \code{\link{wtd.chi.sq}}
 \code{\link{wtd.t.test}}
 

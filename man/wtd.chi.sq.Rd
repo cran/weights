@@ -28,9 +28,6 @@ wtd.chi.sq(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.missing.levels=T
 \code{drop.missing.levels} drops missing levels from variables.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{
 A two-way chi-squared produces a vector including a single chi-squared value, degrees of freedom measure, and p-value for each analysis.
 
@@ -39,15 +36,8 @@ A three-way chi-squared produces a matrix with a single chi-squared value, degre
 \author{
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{wtd.cor}}
-\code{\link{wtd.partial.cor}}
 \code{\link{wtd.t.test}}
 }
 \examples{
