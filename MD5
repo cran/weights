@@ -1,7 +1,7 @@
-646116b1abda542803083f8816605e21 *DESCRIPTION
+a2c651f2a35488e18ff80032c8076d4e *DESCRIPTION
 821b6358ed08fba389fd344baff08cff *NAMESPACE
-8cc896c58c82b2625bc072d7ac318971 *R/dummify.r
-5c3e037f8482e02fc34528785d7e7538 *R/nalevs.r
+19c6883a6f537ae66659e37667fa957f *R/dummify.r
+8c47ae3b465725ab76d4d77211581aa8 *R/nalevs.r
 0b7f62c25dab7cfacdac511376a52cca *R/onecor.wtd.r
 11434bdcca78515fba6fc31749b0feee *R/rd.r
 14a35a47f879f165088f40e3cd998d3f *R/starmaker.r
@@ -9,9 +9,9 @@
 dfda28942badf331b30dbf58a325445e *R/wpct.r
 12d7b53a5b01459218f969fa2ce1d331 *R/wtd.chi.sq.r
 bb5a56271c5a0e6b1f77c603f326af89 *R/wtd.cor.r
-d8c27734b9dca6112bccc12ea0c67bbe *R/wtd.hist.R
+054e443bc73c2739b7c3340a4844a1c9 *R/wtd.hist.R
 b98893859c31c8429e1ebde4030b7557 *R/wtd.t.test.r
-aa9a0579c5de26600768f1dde00f5c8a *man/dummify.Rd
+37f47066aa40c59c8fd6a61469d01b84 *man/dummify.Rd
 a0a5de9824db856c4578a63760f67e43 *man/nalevs.Rd
 1f6bdf8ba41c19f14b1b7deb16033beb *man/rd.Rd
 710ca7d181c49e0f2d3c058b2c842660 *man/starmaker.Rd
@@ -19,5 +19,5 @@ a0a5de9824db856c4578a63760f67e43 *man/nalevs.Rd
 bba563b0fae54c31eea70b9f44f86655 *man/wpct.Rd
 64cedce09b21cf151446733ce8158295 *man/wtd.chi.sq.Rd
 a66b89aa9d70bf9c48ac6b957ef5a6f6 *man/wtd.cor.Rd
-a3c77c21fbdd10650b1c25bc66ab1d8b *man/wtd.hist.Rd
+089126a1298002146bc72dcce24b2b08 *man/wtd.hist.Rd
 f528cb8f8fb19db4586485fca0b4dbd6 *man/wtd.t.test.Rd

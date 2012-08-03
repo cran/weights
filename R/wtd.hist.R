@@ -2,15 +2,16 @@ wtd.hist <- function (x, breaks = "Sturges", freq = NULL, probability = !freq,
                       include.lowest = TRUE, right = TRUE, density = NULL, angle = 45, 
                       col = NULL, border = NULL, main = paste("Histogram of", xname), 
                       xlim = range(breaks), ylim = NULL, xlab = xname, ylab, axes = TRUE, 
-                      plot = TRUE, labels = FALSE, nclass = NULL, weight=NULL, ...){
-  require(Hmisc)
+                      plot = TRUE, labels = FALSE, nclass = NULL, weight=NULL, ...){ #weight command was added
+  ## PLEASE NOTE THAT THIS SOFTWARE IS A COPIED AND MODIFIED VERSION OF THE hist.default FUNCTION PROVIDED IN THE R GRAPHICS PACKAGE AS OF THE TIME THIS SOFTWARE WAS MODIFIED.  THAT SOFTWARE WAS COPYRIGHT OF R-CORE (2010) AND WAS MODIFIED UNDER THE TERMS OF GNU LICENSE 2.  ALL CHANGES TO THE ORIGINAL SOFTWARE ARE NOTATED IN CODE.
+  require(Hmisc) # Requirement for Hmisc was added
   if (!is.numeric(x)) 
     stop("'x' must be numeric")
-  if(is.null(weight))
-    weight <- rep(1, length(x))
+  if(is.null(weight)) # added
+    weight <- rep(1, length(x)) # added
   xname <- paste(deparse(substitute(x), 500), collapse = "\n")
-  n <- sum(weight[is.finite(x)])
-  weight <- weight[is.finite(x)]
+  n <- sum(weight[is.finite(x)]) # modified
+  weight <- weight[is.finite(x)] # added
   x <- x[is.finite(x)]
   use.br <- !missing(breaks)
   if (use.br) {
@@ -66,7 +67,7 @@ wtd.hist <- function (x, breaks = "Sturges", freq = NULL, probability = !freq,
   h <- diff(fuzzybreaks)
   storage.mode(x) <- "double"
   storage.mode(fuzzybreaks) <- "double"
-  counts <- as.double(xtabs(weight~cut(x, fuzzybreaks)))
+  counts <- as.double(xtabs(weight~cut(x, fuzzybreaks))) # modified
   if (any(counts < 0)) 
     stop("negative 'counts'. Internal Error in C-code for \"bincount\"")
   if (sum(counts) < n) 
