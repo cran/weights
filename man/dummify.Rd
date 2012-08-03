@@ -29,7 +29,6 @@ If \code{keep.na} is 'TRUE', output vectors will have "NA"s for cases that were 
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
 \examples{
-require(anesrake)
 data("anes04")
 
 anes04$agecats <- cut(anes04$age, c(17, 25,35,45,55,65, 99))

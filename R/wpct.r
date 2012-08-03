@@ -1,5 +1,4 @@
 wpct <- function(x, weight=NULL, na.rm=TRUE){
-  require(Hmisc)
   if(is.null(weight)){
     weight <- rep(1, length(x))
   }

@@ -4,7 +4,7 @@ wtd.hist <- function (x, breaks = "Sturges", freq = NULL, probability = !freq,
                       xlim = range(breaks), ylim = NULL, xlab = xname, ylab, axes = TRUE, 
                       plot = TRUE, labels = FALSE, nclass = NULL, weight=NULL, ...){ #weight command was added
   ## PLEASE NOTE THAT THIS SOFTWARE IS A COPIED AND MODIFIED VERSION OF THE hist.default FUNCTION PROVIDED IN THE R GRAPHICS PACKAGE AS OF THE TIME THIS SOFTWARE WAS MODIFIED.  THAT SOFTWARE WAS COPYRIGHT OF R-CORE (2010) AND WAS MODIFIED UNDER THE TERMS OF GNU LICENSE 2.  ALL CHANGES TO THE ORIGINAL SOFTWARE ARE NOTATED IN CODE.
-  require(Hmisc) # Requirement for Hmisc was added
+ # require(Hmisc) # Requirement for Hmisc was added
   if (!is.numeric(x)) 
     stop("'x' must be numeric")
   if(is.null(weight)) # added
@@ -65,12 +65,12 @@ wtd.hist <- function (x, breaks = "Sturges", freq = NULL, probability = !freq,
   else c(rep.int(-diddle, length(breaks) - 1), if (include.lowest) diddle else -diddle)
   fuzzybreaks <- breaks + fuzz
   h <- diff(fuzzybreaks)
-  storage.mode(x) <- "double"
-  storage.mode(fuzzybreaks) <- "double"
-  counts <- as.double(xtabs(weight~cut(x, fuzzybreaks))) # modified
+  storage.mode(x) <- "numeric"
+  storage.mode(fuzzybreaks) <- "numeric"
+  counts <- as.numeric(xtabs(weight~cut(x, fuzzybreaks))) # modified
   if (any(counts < 0)) 
     stop("negative 'counts'. Internal Error in C-code for \"bincount\"")
-  if (sum(counts) < n) 
+  if (sum(counts) < n-.01) 
     stop("some 'x' not counted; maybe 'breaks' do not span range of 'x'")
   dens <- counts/(n * diff(breaks))
   mids <- 0.5 * (breaks[-1L] + breaks[-nB])
