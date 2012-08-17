@@ -4,7 +4,10 @@ nalevs <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NUL
   r <- (x %in% set1)
   s <- (x %in% set0)
   t <- (x %in% setmean)
-  x[q || r || s || t] <- NA
+  x[q] <- NA
+  x[r] <- NA
+  x[s] <- NA
+  x[t] <- NA
   x <- as.numeric(x)
   x <- (x-range(x, na.rm=TRUE)[1])/range((x-range(x, na.rm=TRUE)[1]), na.rm=TRUE)[2]
   x[q] <- .5

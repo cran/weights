@@ -8,7 +8,7 @@ Separate a factor into separate dummy variables for each level.
 \code{dummify} creates a matrix with columns signifying separate dummy variables for each level of a factor.  The column names are the former levels of the factor.
 }
 \usage{
-dummify(x, show.na=FALSE)
+dummify(x, show.na=FALSE, keep.na=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,6 +17,9 @@ dummify(x, show.na=FALSE)
 }
 \item{show.na}{
 If \code{show.na} is 'TRUE', output will include a column idicating the cases that are missing.
+}
+\item{keep.na}{
+If \code{keep.na} is 'TRUE', output vectors will have "NA"s for cases that were originally missing.
 }
 }
 \value{

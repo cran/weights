@@ -4,7 +4,7 @@
 Weighted Histograms
 }
 \description{
-Produces weighted histograms by adding a "weight" option to the generic histogram function from the graphics package. The generic function hist computes a histogram of the given data values. If plot=TRUE, the resulting object of class "histogram" is plotted by plot.histogram, before it is returned.  
+Produces weighted histograms by adding a "weight" option to the his.default function from the graphics package (Copyright R-core). The code here was copied from that function and modified slightly to allow for weighted histograms as well as unweighted histograms. The generic function hist computes a histogram of the given data values. If plot=TRUE, the resulting object of class "histogram" is plotted by plot.histogram, before it is returned.  
 }
 \usage{
 wtd.hist(x, breaks = "Sturges",
@@ -122,7 +122,7 @@ wtd.hist(x, breaks = "Sturges",
     \code{breaks} are all the same.}
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com) was responsible for the updates to the original hist function necessary to implement weighted counts.
+Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com) was responsible for the updates to the hist function necessary to implement weighted counts. The hist.default code from the graphics package on which the current function was based was written by R-core. All modifications are noted in code and the copyright for all original code remains with R-core.
 }
 \examples{
 var1 <- c(1:100)
