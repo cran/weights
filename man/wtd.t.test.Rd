@@ -7,7 +7,7 @@ Produces weighted Student's t-tests with standard errors and significance.
 \code{wtd.t.test} produces either one- or two-sample t-tests comparing weighted data streams to one another.
 }
 \usage{
-wtd.t.test(x, y=0, weight=NULL, weighty=NULL, samedata=TRUE)
+wtd.t.test(x, y=0, weight=NULL, weighty=NULL, samedata=TRUE, alternative="two.tailed")
 }
 \arguments{
   \item{x}{
@@ -25,12 +25,15 @@ wtd.t.test(x, y=0, weight=NULL, weighty=NULL, samedata=TRUE)
   \item{samedata}{
 \code{samedata} is an optional identifier for whether the \code{x} and \code{y} data come from the same data stream for a two-sample test.  If true, \code{wtd.t.test} assumes that \code{weighty} should equal \code{weightx} if (1) \code{weighty} is unspecified, and (2) the lengths of the two vectors are identical.
 }
+  \item{alternative}{
+\code{alternative} is an optional marker for whether one or two-tailed p-values shoould be returned.  By default, two-tailed values will be returned (\code{type="two.tailed"}).  To set to one-tailed values, alternative can be set to \code{type="greater"} to test \code{x>y} or \code{type="less"} to test \code{x<y}.
+}
 }
 \value{
 A list element with an identifier for the test; coefficients for the t value, degrees of freedom, and p value of the t-test; and additional statistics of potential interest.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).  Gene Culter added code for a one-tailed version of the test.
 }
 \seealso{
 \code{\link{stdz}}

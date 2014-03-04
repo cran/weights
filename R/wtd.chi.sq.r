@@ -1,5 +1,4 @@
 wtd.chi.sq <- function(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.missing.levels=TRUE){
-  require(gdata)
   if(is.null(weight)){
     weight <- rep(1, length(var1))
   }

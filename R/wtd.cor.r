@@ -13,7 +13,7 @@ wtd.cor <- function(x, y=NULL, weight=NULL, collapse=TRUE){
   tval <- sapply(materset, function(q) sapply(q, function(g) g[3]))
   pval <- sapply(materset, function(q) sapply(q, function(g) g[4]))
   out <- list(correlation=est, std.err=se, t.value=tval, p.value=pval)
-  if(is.vector(est) & collapse==TRUE || (1 %in% dim(est)) & collapse==TRUE){
+  if(is.vector(est) & collapse==TRUE || (1 %in% dim(est)) & collapse==TRUE){ #Fix Section
     out <- matrix(unlist(out), ncol=4, byrow=FALSE)
     rownames(out) <- names(est)
     colnames(out) <- c("correlation", "std.err", "t.value", "p.value")

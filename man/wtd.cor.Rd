@@ -2,7 +2,7 @@
 \alias{wtd.cor}
 \alias{onecor.wtd}
 \title{
-Produces weighted correlations with standard errors and significance.
+Produces weighted correlations with standard errors and significance.  For a faster version without standard errors and p values, use the \code{\link{wtd.cors}} function.
 }
 \description{
 \code{wtd.cor} produces a Pearsons correlation coefficient comparing two variables or matrices.  
@@ -31,6 +31,7 @@ A list with matrices for the estimated correlation coefficient, the standard err
 Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
 }
 \seealso{
+\code{\link{wtd.cors}}
 \code{\link{stdz}}
 \code{\link{wtd.t.test}}
 \code{\link{wtd.chi.sq}}
