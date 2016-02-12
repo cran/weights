@@ -7,7 +7,8 @@ Recode variables to 0-1 scale
 \code{nalevs} takes as an input any vector and recodes it to range from 0 to 1, to treat specified levels as missing, to treat specified levels as 0, 1, .5, or the mean (weighted or unweighted) of the levels present after coding.
 }
 \usage{
-nalevs(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NULL, weight=NULL)
+nalevs(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL,
+setmean=NULL, weight=NULL)
 }
 \arguments{
   \item{x}{A vector to be recoded to range from 0 to 1.}

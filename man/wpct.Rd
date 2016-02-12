@@ -7,7 +7,7 @@ Provides a weighted table of percentages for any variable.
 \code{wpct} produces a weighted table of the proportion of data in each category for any variable.  This is simply a weighted frequency table divided by its sum.
 }
 \usage{
-wpct(x, weight, na.rm=TRUE)
+wpct(x, weight=NULL, na.rm=TRUE, ...)
 }
 \arguments{
   \item{x}{
@@ -18,6 +18,9 @@ wpct(x, weight, na.rm=TRUE)
 }
   \item{na.rm}{
 If \code{na.rm} is true, missing data will be dropped.  If \code{na.rm} is false, missing data will return an error.
+}
+\item{...}{
+\code{...} (optional) Additional arguments to be passed on to \code{\link{wtd.table}}.
 }
 }
 \value{

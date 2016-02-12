@@ -1,7 +1,9 @@
-wtd.chi.sq <- function(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.missing.levels=TRUE){
+wtd.chi.sq <- function(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.missing.levels=TRUE, mean1=TRUE){
   if(is.null(weight)){
     weight <- rep(1, length(var1))
   }
+  if(mean1==TRUE)
+      weight <- weight/mean(weight, na.rm=TRUE)
   if(na.rm==TRUE){
     filt <- (!is.na(var1) & !is.na(var2))
     if(!is.null(var3))

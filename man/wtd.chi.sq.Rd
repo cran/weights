@@ -4,9 +4,10 @@
 Produces weighted chi-squared tests.
 }
 \description{
-\code{wtd.chi.sq} produces weighted chi-squared tests for two- and three-variable contingency tables.  Decomposes parts of three-variable contingency tables as well.}
+\code{wtd.chi.sq} produces weighted chi-squared tests for two- and three-variable contingency tables.  Decomposes parts of three-variable contingency tables as well. Note that weights run with the default parameters here treat the weights as an estimate of the precision of the information. A prior version of this software was set to default to \code{mean1=FALSE}.}
 \usage{
-wtd.chi.sq(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.missing.levels=TRUE)
+wtd.chi.sq(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE,
+drop.missing.levels=TRUE, mean1=TRUE)
 }
 \arguments{
   \item{var1}{
@@ -26,6 +27,9 @@ wtd.chi.sq(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.missing.levels=T
 }
   \item{drop.missing.levels}{
 \code{drop.missing.levels} drops missing levels from variables.
+}
+  \item{mean1}{
+\code{mean1} is an optional parameter for determining whether the weights should be forced to have an average value of 1. If this is set as false, the weighted correlations will be produced with the assumption that the true N of the data is equivalent to the sum of the weights.
 }
 }
 \value{
