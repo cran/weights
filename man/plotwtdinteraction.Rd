@@ -3,7 +3,11 @@
 \alias{findwtdinteraction}
 \alias{findwtdinteraction.default}
 \alias{findwtdinteraction.mira}
+\alias{findwtdinteraction.multinom}
 \alias{plotinteractpreds}
+\alias{plotinteractpreds.default}
+\alias{plotinteractpreds.interactpreds}
+\alias{plotinteractpreds.interactpredsmnl}
 \title{
 Functions to Identify and Plot Predicted Probabilities As Well As Two- and Three-Way Interactions From Regressions With or Without Weights and Standard Errors
 }
@@ -21,25 +25,27 @@ These functions are known to be compatible with \code{\link{lm}}, \code{\link{gl
 **Important: If you are using a regression output from a multiply imputed dataset with a continuous variable as an interacting term, you should always specify the levels (acrosslevs, bylevs, or atlevs) for the variable, as imputations can change the set of levels that are available and thus can make the point estimates across imputed datasets incompatible with one-another.**
 }
 \usage{
-plotwtdinteraction(reg, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,
+plotwtdinteraction(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,
 atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL,
 atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20,
 type="response", seplot=TRUE, ylim=NULL, main=NULL, xlab=NULL, ylab=NULL,
-legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addat=FALSE, mfrow=NULL,
-linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, ...)
+legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addat=FALSE, addby=TRUE,
+mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE,
+lty=NULL, density=30, startangle=45, approach="prototypical", data=NULL, ...)
 
-findwtdinteraction(reg, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,
+findwtdinteraction(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,
 atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL,
 atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20,
-type="response")
+type="response", approach="prototypical", data=NULL)
 
 plotinteractpreds(out, seplot=TRUE, ylim=NULL, main=NULL, xlab=NULL, ylab=NULL,
 legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addat=FALSE, mfrow=NULL,
-linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, ...)
+linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, lty=NULL,
+density=30, startangle=45, ...)
 }
 \arguments{
-\item{reg}{
-\code{reg} is a regression object in lm, glm, or mira (multiply imputed) format that includes the variables to be plotted.
+\item{x}{
+\code{x} is a regression object in lm, glm, or mira (multiply imputed) format that includes the variables to be plotted.
 }
 \item{out}{
 \code{out} is an object estimate using findwtdinteraction that should be plotted.
@@ -122,6 +128,9 @@ linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, ...)
 \item{addat}{
 \code{addat} (optional) logical statement specifying whether the levels of \code{at} should be different plots (\code{addat=TRUE}) or if each level of \code{at} should generate a new plot (\code{addat=FALSE} is the default)
 }
+\item{addby}{
+\code{addby} (optional) logical statement specifying whether the levels of \code{by} should be different plots (\code{addby=TRUE}) or if each level of \code{by} should generate a new plot (\code{addby=TRUE} is the default)
+}
 \item{mfrow}{
 \code{mfrow} (optional) temporarily changes the number of plots per page in \code{\link{par}} for the purpose of generating current plots. This should generally only be used for 3-way interactions.  It takes commands of the form \code{c(2,3)}, specifying the number of rows and columns in the graphics interface. The algorithm defaults to putting all 3-way interactions on a single page with a width of 2. 
 }
@@ -136,6 +145,21 @@ linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, ...)
 }
 \item{showatnamelegend}{
 \code{showatnamelegend} (optional) adds name of \code{at} variable to names of value levels in legend.
+}
+\item{lty}{
+\code{lty} (optional) line type to pass on to plot.
+}
+\item{density}{
+\code{density} (optional) line density for standard error plots.
+}
+\item{startangle}{
+\code{startangle} (optional) line angle for standard error plots.
+}
+\item{approach}{
+\code{approach} determines whether you want to estimate counterfactuals for a prototypical individual \code{approach="prototypical"} (the default), for the entire population \code{approach="population"}, or for individuals in the subgroups specified in the \code{by} and \code{at} categories \code{approach="at"},  \code{approach="by"},  \code{approach="atby"}.
+}
+\item{data}{
+\code{data} (optional) allows you to replace the dataset used in the regression to produce other prototypical values.
 }
 \item{...}{
 \code{...} (optional) Additional arguments to be passed on to plot command (or future methods of \code{findwtdinteraction}).
