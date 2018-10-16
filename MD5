@@ -1,10 +1,10 @@
-4bbe1e3253144c924a3cbce88c07a2f2 *DESCRIPTION
-be22460b2ea36b717a0027aa91db3fca *NAMESPACE
+cb60564a62d3528139b92a4fb56d9b6e *DESCRIPTION
+ea9348a3ffb9f1e907a1e5153c502a9f *NAMESPACE
 19c6883a6f537ae66659e37667fa957f *R/dummify.r
 04ef1524fabb29ffcbb31740bf10379b *R/findwtdinteraction.R
-892c643d42f45567f11b1c252f042f75 *R/findwtdinteraction.default.R
+a00790fc45ca454b43a172bebdc37770 *R/findwtdinteraction.default.R
 98d6850df5d06aec4b23ac56581959ae *R/findwtdinteraction.mira.R
-c45221835dfebd081405fa42c606ccfb *R/findwtdinteraction.multinom.R
+0fb6b75585dcc57142543f8eaf2b444a *R/findwtdinteraction.multinom.R
 3ba4c737b4302fadea346a5d5e29aa68 *R/na.levs.r
 8c47ae3b465725ab76d4d77211581aa8 *R/nalevs.r
 0b7f62c25dab7cfacdac511376a52cca *R/onecor.wtd.r
@@ -26,7 +26,7 @@ babb42969c236799eab853cd777f04fe *R/wtd.cors.r
 894dc32452cfacd0f9d6c99a7e651992 *man/anes04.Rd
 4900037abee00b98c8cd3237da760b7f *man/dummify.Rd
 a62814e3350f0134f96df1e281d87918 *man/nalevs.Rd
-5a3bde19f6a831bba6b57a54f95d0d11 *man/plotwtdinteraction.Rd
+500166d51108c103bcb6692f04ae06a1 *man/plotwtdinteraction.Rd
 93ff2eea59fc173c0f3ecc277cb1677f *man/rd.Rd
 710ca7d181c49e0f2d3c058b2c842660 *man/starmaker.Rd
 56499fd4338cc4cb1bf47a0f9b95cb9e *man/stdz.Rd

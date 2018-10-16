@@ -23,6 +23,8 @@ These functions are known to be compatible with \code{\link{lm}}, \code{\link{gl
 *Note, this set of functions is still in beta, please let me know if you run into any bugs when using it.*
 
 **Important: If you are using a regression output from a multiply imputed dataset with a continuous variable as an interacting term, you should always specify the levels (acrosslevs, bylevs, or atlevs) for the variable, as imputations can change the set of levels that are available and thus can make the point estimates across imputed datasets incompatible with one-another.**
+
+ordinal regressions (polr) and multinomial regressions (multinom) do not currently support standard errors
 }
 \usage{
 plotwtdinteraction(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,

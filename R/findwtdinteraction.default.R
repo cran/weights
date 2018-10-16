@@ -98,16 +98,16 @@ findwtdinteraction.default <- function(x, across, by=NULL, at=NULL, acrosslevs=N
     out$Means <- as.list(1:length(atlevs))
     names(out$Means) <- atlevnames
     if(approach=="prototypical"){
-        pd <- data.frame(df[1:lng,])
+        pd <- data.frame(na.omit(df)[1:lng,])
         for(i in 1:dim(pd)[2]){
             if(class(pd[,i])[1]=="numeric")
                 pd[,i] <- rep(wtd.mean(df[,i], na.rm=TRUE), lng)
             if(class(pd[,i])[1]=="ordered")
-                pd[,i] <- ordered(rep(names(cumsum(wtd.table(df[,i], weight)$sum.of.weights)/sum(wtd.table(df[,i], weight)$sum.of.weights))[cumsum(wtd.table(df[,i], weight)$sum.of.weights)/sum(wtd.table(df[,i], weight)$sum.of.weights)>=.5][1], lng), levels=levels(df[,i]))
+                pd[,i] <- ordered(rep(wtd.table(df[,i], weight)$x[cumsum(wtd.table(df[,i], weight)$sum.of.weights)/sum(wtd.table(df[,i], weight)$sum.of.weights)>=.5][1], lng), levels=levels(df[,i]))
             if(class(pd[,i])[1]=="factor")
-                pd[,i] <- factor(rep(names(wtd.table(df[,i], weight)$sum.of.weights[wtd.table(df[,i], weight)$sum.of.weights==max(wtd.table(df[,i], weight)$sum.of.weights)][1]), lng), levels=levels(df[,i]))
+                pd[,i] <- factor(rep(wtd.table(df[,i], weight)$x[wtd.table(df[,i], weight)$sum.of.weights==max(wtd.table(df[,i], weight)$sum.of.weights)][1], lng), levels=levels(df[,i]))
             if(class(pd[,i])[1]=="logical")
-                pd[,i] <- as.logical(rep(names(wtd.table(df[,i], weight)$sum.of.weights[wtd.table(df[,i], weight)$sum.of.weights==max(wtd.table(df[,i], weight)$sum.of.weights)][1]), lng))
+                pd[,i] <- as.logical(rep(wtd.table(df[,i], weight)$x[wtd.table(df[,i], weight)$sum.of.weights==max(wtd.table(df[,i], weight)$sum.of.weights)][1], lng))
         }
         out$Resp <- pd[1,!(colnames(pd) %in% c(dvname, at, across, by))]
         out$SEs <- as.list(1:length(atlevs))
