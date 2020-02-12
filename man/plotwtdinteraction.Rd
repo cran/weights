@@ -3,6 +3,7 @@
 \alias{findwtdinteraction}
 \alias{findwtdinteraction.default}
 \alias{findwtdinteraction.mira}
+\alias{findwtdinteraction.list}
 \alias{findwtdinteraction.multinom}
 \alias{plotinteractpreds}
 \alias{plotinteractpreds.default}

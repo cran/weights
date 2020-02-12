@@ -8,7 +8,7 @@
 */
 
 /* .Call calls */
-extern SEXP wcorr(SEXP, SEXP, SEXP, SEXP);
+extern SEXP wcorr(SEXP, SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
     {"wcorr", (DL_FUNC) &wcorr, 4},

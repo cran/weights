@@ -1,7 +1,7 @@
 Package: weights
 Title: Weighting and Weighted Statistics
-Version: 1.0
-Date: 2018-10-16
+Version: 1.0.1
+Date: 2020-02-10
 Author: Josh Pasek [aut, cre], with some assistance from Alex Tahk and some code modified from R-core; Additional contributions by Gene Culter and Marcus Schwemmle.
 Maintainer: Josh Pasek <josh@joshpasek.com>
 Depends: Hmisc, gdata, mice
@@ -9,6 +9,6 @@ Description: Provides a variety of functions for producing simple weighted stati
 License: GPL (>= 2)
 LazyLoad: yes
 NeedsCompilation: yes
-Packaged: 2018-10-16 18:33:54 UTC; jpasek
+Packaged: 2020-02-10 07:14:00 UTC; jpasek
 Repository: CRAN
-Date/Publication: 2018-10-16 22:10:03 UTC
+Date/Publication: 2020-02-12 15:20:02 UTC
