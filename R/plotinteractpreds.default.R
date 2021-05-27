@@ -1,4 +1,4 @@
-plotinteractpreds.default <- function(out, seplot=TRUE, ylim=NULL, main=NULL, xlab=NULL, ylab=NULL, legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addat=FALSE, mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, lty=NULL, density=30, startangle=45, ...){
+plotinteractpreds.default <- function(out, seplot=TRUE, ylim=NULL, main=NULL, xlab=NULL, ylab=NULL, legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addby=TRUE, addat=FALSE, mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, showoutnamelegend=FALSE, lty=NULL, density=30, startangle=45, ...){
     oldmfrow <- par()$mfrow
     if(class(out)!="interactpreds")
         warning("This function may not work with data that is not generated using the findwtdinteraction function")
@@ -35,11 +35,11 @@ plotinteractpreds.default <- function(out, seplot=TRUE, ylim=NULL, main=NULL, xl
         xlim <- c(min(acrossvals, na.rm=TRUE), max(acrossvals, na.rm=TRUE))
     hasat <- !(is.null(atlevs) || length(atlevs)==1)
     if(is.null(linecol) & addat==TRUE)
-        linecol <- gray(seq(.25, 1, length.out=length(atlevs)))
+        linecol <- gray(seq(0, .5, length.out=length(atlevs)))
     if(is.null(linecol))
         linecol <- "black"
     if(is.null(secol) & addat==TRUE)
-        secol <- gray(seq(.1, .75, length.out=length(atlevs)))
+        secol <- gray(seq(.3, .8, length.out=length(atlevs)))
     if(is.null(secol))
         secol <- "light gray"
     atlegend <- atlevs

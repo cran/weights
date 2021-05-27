@@ -9,7 +9,7 @@ na.levs.factor <- function(x, naset=NULL, setmedian=NULL, setmode=NULL, weight=N
   r <- (x %in% setmode)
   x[q] <- NA
   x[r] <- NA
-  x <- drop.levels(x, reorder=FALSE)
+  x <- droplevels(x)
   if(!is.null(weight))
     x[q] <- names(table(x))[eval(sapply(1:length(table(x)), function(g) sum(wtd.table(x, weights)$sum.of.weights[1:g])/sum(wtd.table(x, weights)$sum.of.weights))>.5)][1]
   if(is.null(weight))

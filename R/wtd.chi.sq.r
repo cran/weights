@@ -15,10 +15,13 @@ wtd.chi.sq <- function(var1, var2, var3=NULL, weight=NULL, na.rm=TRUE, drop.miss
     weight <- weight[filt]
   }
   if(drop.missing.levels==TRUE){
-    var1 <- drop.levels(var1)
-    var2 <- drop.levels(var2)
+      if(is.factor(var1))
+          var1 <- drop.levels(var1)
+      if(is.factor(var2))
+          var2 <- drop.levels(var2)
     if(!is.null(var3))
-      var3 <- drop.levels(var3)
+      if(is.factor(var3))
+          var3 <- drop.levels(var3)
   }
   var12set <- unlist(summary(xtabs(weight~var1+var2))[c("statistic", "parameter", "p.value")])
   names(var12set) <- c("Chisq", "df", "p.value")

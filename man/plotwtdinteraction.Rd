@@ -5,6 +5,7 @@
 \alias{findwtdinteraction.mira}
 \alias{findwtdinteraction.list}
 \alias{findwtdinteraction.multinom}
+\alias{findwtdinteraction.lmerMod}
 \alias{plotinteractpreds}
 \alias{plotinteractpreds.default}
 \alias{plotinteractpreds.interactpreds}
@@ -13,37 +14,49 @@
 Functions to Identify and Plot Predicted Probabilities As Well As Two- and Three-Way Interactions From Regressions With or Without Weights and Standard Errors
 }
 \description{
-\code{plotwtdinteraction} produces a plot from a regression object to illustrate a two- or three-way interaction for a prototypical individual holding constant all other variables. Prototypical individual is identified as the mean (numeric), median (ordinal), and/or modal (factors and logical variables) values for all measures. Standard errors are illustrated with polygons by default.
+\code{plotwtdinteraction} produces a plot from a regression object to
+illustrate a two- or three-way interaction for a prototypical individual
+holding constant all other variables (or other counterfactuals,
+depending on type). Prototypical individual is identified as the mean (numeric), median (ordinal), and/or modal (factors and logical variables) values for all measures. Standard errors are illustrated with polygons by default.
 
 \code{findwtdinteraction} generates a table of point estimates from a regression object to illustrate a two- or three-way interaction for a prototypical individual holding constant all other variables. Prototypical individual is identified as the mean (numeric), median (ordinal), and/or modal (factors and logical variables) values for all measures. Standard errors are illustrated with polygons by default.
 
 \code{plotinteractpreds} plots an object from \code{findwtdinteraction}.
 
-These functions are known to be compatible with \code{\link{lm}}, \code{\link{glm}}, as well as multiply imputed \code{\link{lm}} and \code{\link{glm}} data generated with the \code{\link{mice}} package.
+These functions are known to be compatible with \code{\link{lm}},
+\code{\link{glm}}, as well as multiply imputed \code{\link{lm}} and
+\code{\link{glm}} data generated with the \code{\link{mice}}
+package. They are also compatible with \code{\link{gam}} and
+\code{\link{bam}} regressions from the mgcv package under default.
+
+ordinal regressions (polr) and multinomial regressions (multinom) do not
+currently support standard errors, additional methods are still being added.
 
 *Note, this set of functions is still in beta, please let me know if you run into any bugs when using it.*
 
 **Important: If you are using a regression output from a multiply imputed dataset with a continuous variable as an interacting term, you should always specify the levels (acrosslevs, bylevs, or atlevs) for the variable, as imputations can change the set of levels that are available and thus can make the point estimates across imputed datasets incompatible with one-another.**
 
-ordinal regressions (polr) and multinomial regressions (multinom) do not currently support standard errors
 }
 \usage{
 plotwtdinteraction(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,
 atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL,
 atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20,
 type="response", seplot=TRUE, ylim=NULL, main=NULL, xlab=NULL, ylab=NULL,
-legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addat=FALSE, addby=TRUE,
-mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE,
-lty=NULL, density=30, startangle=45, approach="prototypical", data=NULL, ...)
+legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addby = TRUE, addat=FALSE,
+mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE,
+showatnamelegend=FALSE, showoutnamelegend = FALSE, 
+lty=NULL, density=30, startangle=45, approach="prototypical", data=NULL,
+nsim=100, ...)
 
 findwtdinteraction(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,
 atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL,
 atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20,
-type="response", approach="prototypical", data=NULL)
+type="response", approach="prototypical", data=NULL, nsim=100)
 
 plotinteractpreds(out, seplot=TRUE, ylim=NULL, main=NULL, xlab=NULL, ylab=NULL,
-legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addat=FALSE, mfrow=NULL,
-linecol=NULL, secol=NULL, showbynamelegend=FALSE, showatnamelegend=FALSE, lty=NULL,
+legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addby = TRUE,
+addat=FALSE, mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE,
+showatnamelegend=FALSE, showoutnamelegend = FALSE, lty=NULL,
 density=30, startangle=45, ...)
 }
 \arguments{
@@ -128,11 +141,11 @@ density=30, startangle=45, ...)
 \item{add}{
 \code{add} (optional) logical statement to add the results to an existing plot (\code{at=TRUE}) rather than generating a new one (\code{at=FALSE} is the default).
 }
+\item{addby}{
+\code{addby} (optional) logical statement specifying whether the levels of \code{by} should be different plots (\code{addby=TRUE}) or if each level of \code{by} should generate a new plot (\code{addby=TRUE} is the default). This only influences some types of plots.
+}
 \item{addat}{
 \code{addat} (optional) logical statement specifying whether the levels of \code{at} should be different plots (\code{addat=TRUE}) or if each level of \code{at} should generate a new plot (\code{addat=FALSE} is the default)
-}
-\item{addby}{
-\code{addby} (optional) logical statement specifying whether the levels of \code{by} should be different plots (\code{addby=TRUE}) or if each level of \code{by} should generate a new plot (\code{addby=TRUE} is the default)
 }
 \item{mfrow}{
 \code{mfrow} (optional) temporarily changes the number of plots per page in \code{\link{par}} for the purpose of generating current plots. This should generally only be used for 3-way interactions.  It takes commands of the form \code{c(2,3)}, specifying the number of rows and columns in the graphics interface. The algorithm defaults to putting all 3-way interactions on a single page with a width of 2. 
@@ -149,6 +162,9 @@ density=30, startangle=45, ...)
 \item{showatnamelegend}{
 \code{showatnamelegend} (optional) adds name of \code{at} variable to names of value levels in legend.
 }
+\item{showoutnamelegend}{
+\code{showoutnamelegend} (optional) adds name of DV to legend in multinomial logit plots only.
+}
 \item{lty}{
 \code{lty} (optional) line type to pass on to plot.
 }
@@ -163,6 +179,10 @@ density=30, startangle=45, ...)
 }
 \item{data}{
 \code{data} (optional) allows you to replace the dataset used in the regression to produce other prototypical values.
+}
+\item{nsim}{
+\code{nsim} (optional) set the number of bootstrapped simulations to use
+to generate standard errors for lmer-style regressions. Note that this SIGNIFICANLY increases the time to run, so test with smaller numbers before running.
 }
 \item{...}{
 \code{...} (optional) Additional arguments to be passed on to plot command (or future methods of \code{findwtdinteraction}).

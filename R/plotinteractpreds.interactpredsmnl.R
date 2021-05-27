@@ -41,8 +41,8 @@ plotinteractpreds.interactpredsmnl <- function(out, seplot=FALSE, ylim=NULL, mai
     if(is.null(xlim))
         xlim <- c(min(acrossvals, na.rm=TRUE), max(acrossvals, na.rm=TRUE))
     hasat <- !(is.null(atlevs) || length(atlevs)==1)
-    if(is.null(linecol) & hasby==TRUE)
-        linecol <- gray(seq(.25, 1, length.out=length(outcats)))
+    if(is.null(linecol) & addat==TRUE)
+        linecol <- gray(seq(0, .5, length.out=length(atlevs)))
     if(is.null(linecol))
         linecol <- "black"
     atlegend <- atlevs

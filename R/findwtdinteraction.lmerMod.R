@@ -1,14 +1,12 @@
-findwtdinteraction.default <- function(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL, atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL, atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20, type="response", approach="prototypical", data=NULL, nsim=100){
+findwtdinteraction.lmerMod <- function(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL, atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL, atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20, type="response", approach="prototypical", data=NULL, nsim=100){
     reg <- x
     if(!is.null(data))
         df <- data
     if(is.null(data))
-        df <- reg$model
+        df <- attributes(x)$frame
     if(is.null(weight)){
-        if(!is.null(reg$prior.weight))
-            weight <- reg$prior.weight
-        if(is.null(reg$prior.weight) & !is.null(reg$weights))
-            weight <- reg$weights
+        if(!is.null(attributes(x)$frame[,"(weights)"]))
+            weight <- attributes(x)$frame[,"(weights)"]
         if(is.null(weight))
             weight <- rep(1, dim(df)[1])
     }
@@ -128,10 +126,10 @@ findwtdinteraction.default <- function(x, across, by=NULL, at=NULL, acrosslevs=N
                     bylist[[i]] <- pd
                 bylist[[i]][,by] <- rep(bylevs[i], length(bylist[[i]][,by]))
             }
-            eachpred <- lapply(bylist, function(x) predict(reg, newdata=x, se.fit=TRUE, type=type))
-            means <- t(sapply(eachpred, function(x) x$fit))
+            eachpred <- lapply(bylist, function(x) bootMer(reg, function(r) predict(r, newdata=x, type=type, re.form=NA), nsim=nsim))
+            means <- t(sapply(eachpred, function(x) x$t0))
             out$Means[[a]] <- as.matrix(means)
-            ses <- t(sapply(eachpred, function(x) x$se.fit))
+            ses <- t(sapply(eachpred, function(x) apply(x$t, 2, function(g) sd(g))))
             out$SEs[[a]] <- as.matrix(ses)
             try(rownames(out$Means[[a]]) <- rownames(out$SEs[[a]]) <- bylevnames)
             try(colnames(out$Means[[a]]) <- colnames(out$SEs[[a]]) <- acclevnames)

@@ -1,4 +1,4 @@
-findwtdinteraction.multinom <- function(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL, atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL, atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20, type="probs", data){
+findwtdinteraction.multinom <- function(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL, atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL, atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20, type="probs", approach="prototypical", data=NULL, nsim=100){
     reg <- x
     df <- data
     clsset <- sapply(lapply(df, class), function(x) x[1])
@@ -93,7 +93,7 @@ findwtdinteraction.multinom <- function(x, across, by=NULL, at=NULL, acrosslevs=
     pd <- data.frame(na.omit(df[1:lng,]))
     for(i in 1:dim(pd)[2]){
         if(class(pd[,i])[1]=="numeric")
-            pd[,i] <- rep(wtd.mean(df[,i], na.rm=TRUE), lng)
+            pd[,i] <- rep(wtd.mean(df[,i], weight, na.rm=TRUE), lng)
         if(class(pd[,i])[1]=="ordered")
                 pd[,i] <- ordered(rep(wtd.table(df[,i], weight)$x[cumsum(wtd.table(df[,i], weight)$sum.of.weights)/sum(wtd.table(df[,i], weight)$sum.of.weights)>=.5][1], lng), levels=levels(df[,i]))
             if(class(pd[,i])[1]=="factor")

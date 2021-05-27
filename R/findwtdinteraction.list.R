@@ -1,5 +1,5 @@
-findwtdinteraction.list <- function(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL, atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL, atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20, type="response", approach="prototypical", data=NULL){
-    predset <- lapply(x, function(g) findwtdinteraction.default(g, across, by, at, acrosslevs=acrosslevs, bylevs=bylevs, atlevs=atlevs, weight=weight, dvname=dvname, bylevnames=bylevnames, atlevnames=atlevnames, acclevnames=acclevnames, stdzacross, stdzby, stdzat, limitlevs=limitlevs, approach=approach))
+findwtdinteraction.list <- function(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL, atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL, atlevnames=NULL, stdzacross=FALSE, stdzby=FALSE, stdzat=FALSE, limitlevs=20, type="response", approach="prototypical", data=NULL, nsim=100){
+    predset <- lapply(x, function(g) findwtdinteraction(g, across, by, at, acrosslevs=acrosslevs, bylevs=bylevs, atlevs=atlevs, weight=weight, dvname=dvname, bylevnames=bylevnames, atlevnames=atlevnames, acclevnames=acclevnames, stdzacross, stdzby, stdzat, limitlevs=limitlevs, approach=approach, nsim=100))
     allmns <- lapply(predset, function(m) m$Means)
     if(table(table(sapply(allmns, length)))!=1)
         stop("at variable values are inconsistent across imputations, please set atlevs before running")
