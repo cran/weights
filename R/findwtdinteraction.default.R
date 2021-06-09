@@ -10,9 +10,9 @@ findwtdinteraction.default <- function(x, across, by=NULL, at=NULL, acrosslevs=N
         if(is.null(reg$prior.weight) & !is.null(reg$weights))
             weight <- reg$weights
         if(is.null(weight))
-            weight <- rep(1, dim(df)[1])
+            weight <- rep(1, nrow(df))
     }
-    if(length(weight)!=(dim(df)[1]))
+    if(length(weight)!=(nrow(df)))
         stop("Weight vector length must match the number of complete cases in the regression.")
     clsset <- sapply(lapply(df, class), function(x) x[1])
     acclass <- class(df[,across])[1]

@@ -1,8 +1,8 @@
-655605a7f274145684d55c48ffb5bfcf *DESCRIPTION
+fbf286a9c0ccecb4e564a3291a679d8e *DESCRIPTION
 12d15e8ee90abed8733a8eeabb5e5afd *NAMESPACE
 19c6883a6f537ae66659e37667fa957f *R/dummify.r
 4bf97aea778c0f1deb6bc4e67abe3bc1 *R/findwtdinteraction.R
-c5b6f8e3aab25248468d2801633de0bf *R/findwtdinteraction.default.R
+f70615184f59193a84565c55f9e61743 *R/findwtdinteraction.default.R
 bb89b5310f79f3c5cdfb61179960400b *R/findwtdinteraction.list.R
 17705dd0356376c1d2def5efcc2a8f57 *R/findwtdinteraction.lmerMod.R
 49312ce6a987743afe0fd4cbdc20493d *R/findwtdinteraction.mira.R
@@ -12,9 +12,9 @@ a151b90bad6671eb134aee4584cc1db7 *R/na.levs.r
 0b7f62c25dab7cfacdac511376a52cca *R/onecor.wtd.r
 f34bc3a697f9389e06fb07ef07880a22 *R/plotinteractpreds.R
 5cefe04f0ce5bceea040e0e1fa183b8c *R/plotinteractpreds.default.R
-d631f9c033667c481b9c2df0bfa07ebc *R/plotinteractpreds.interactpreds.R
+45c607af9459a086c81347cd8e388674 *R/plotinteractpreds.interactpreds.R
 c35467ffdfe466d13a6c0757861b5928 *R/plotinteractpreds.interactpredsmnl.R
-a9f6acb32be8421022270c7e21429198 *R/plotwtdinteraction.R
+dfacabf1e16291744f1940636908aece *R/plotwtdinteraction.R
 5922785c591c79d6cd1ca351ee4ee859 *R/rd.r
 14a35a47f879f165088f40e3cd998d3f *R/starmaker.r
 72377bbd553bd942128c08e953a01ba5 *R/stdz.r
