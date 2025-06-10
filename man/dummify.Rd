@@ -26,7 +26,7 @@ If \code{keep.na} is 'TRUE', output vectors will have "NA"s for cases that were 
 \code{dummify} returns a matrix with a number of rows equal to the length of \code{x} and a number of columns equal to the number of levels of \code{x}.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \examples{
 data("anes04")

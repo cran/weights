@@ -25,9 +25,9 @@ depending on type). Prototypical individual is identified as the mean (numeric),
 
 These functions are known to be compatible with \code{\link{lm}},
 \code{\link{glm}}, as well as multiply imputed \code{\link{lm}} and
-\code{\link{glm}} data generated with the \code{\link{mice}}
-package. They are also compatible with \code{\link{gam}} and
-\code{\link{bam}} regressions from the mgcv package under default.
+\code{\link{glm}} data generated with the \code{\link[mice]{mice}}
+package. They are also compatible with \code{\link[mgcv]{gam}} and
+\code{\link[mgcv]{bam}} regressions from the mgcv package under default.
 
 ordinal regressions (polr) and multinomial regressions (multinom) do not
 currently support standard errors, additional methods are still being added.
@@ -46,7 +46,7 @@ legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addby = TRUE, addat=FALS
 mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE,
 showatnamelegend=FALSE, showoutnamelegend = FALSE, 
 lty=NULL, density=30, startangle=45, approach="prototypical", data=NULL,
-nsim=100, ...)
+nsim=100, xlim=NULL, ...)
 
 findwtdinteraction(x, across, by=NULL, at=NULL, acrosslevs=NULL, bylevs=NULL,
 atlevs=NULL, weight=NULL, dvname=NULL, acclevnames=NULL, bylevnames=NULL,
@@ -57,7 +57,7 @@ plotinteractpreds(out, seplot=TRUE, ylim=NULL, main=NULL, xlab=NULL, ylab=NULL,
 legend=TRUE, placement="bottomright", lwd=3, add=FALSE, addby = TRUE,
 addat=FALSE, mfrow=NULL, linecol=NULL, secol=NULL, showbynamelegend=FALSE,
 showatnamelegend=FALSE, showoutnamelegend = FALSE, lty=NULL,
-density=30, startangle=45, ...)
+density=30, startangle=45, xlim=NULL, ...)
 }
 \arguments{
 \item{x}{
@@ -184,6 +184,9 @@ density=30, startangle=45, ...)
 \code{nsim} (optional) set the number of bootstrapped simulations to use
 to generate standard errors for lmer-style regressions. Note that this SIGNIFICANLY increases the time to run, so test with smaller numbers before running.
 }
+\item{xlim}{
+\code{xlim} (optional) set the range of x axis, passes to plot.
+}
 \item{...}{
 \code{...} (optional) Additional arguments to be passed on to plot command (or future methods of \code{findwtdinteraction}).
 }
@@ -192,5 +195,5 @@ to generate standard errors for lmer-style regressions. Note that this SIGNIFICA
 A table or figure illustrating the predicted values of the dependent variable across levels of the independent variables for a prototypical respondent.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }

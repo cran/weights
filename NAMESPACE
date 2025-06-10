@@ -1,23 +1,80 @@
 useDynLib(weights, .registration = TRUE)
 
-export("wtd.hist", "wtd.chi.sq", "wtd.t.test", "wtd.cor", "nalevs", "dummify", "wpct", "starmaker", "stdz", "rd")
-export(findwtdinteraction, plotwtdinteraction, plotinteractpreds, findwtdinteraction.mira, findwtdinteraction.default, findwtdinteraction.lmerMod, findwtdinteraction.list, findwtdinteraction.multinom, plotinteractpreds.default, plotinteractpreds.interactpreds, plotinteractpreds.interactpredsmnl)
-export(wtd.cors)
-
-importFrom(Hmisc, wtd.table, wtd.mean, wtd.var)
-importFrom(mice, pool.scalar)
-importFrom(gdata, drop.levels)
-importFrom(lme4, bootMer)
-importFrom("grDevices", "nclass.FD", "nclass.Sturges", "nclass.scott", "gray")
-importFrom("stats", "coef", "lm", "model.matrix", "pchisq", "pt",
-     "weights", "xtabs", "cor", "predict", "var", "na.omit", "sd")
-importFrom("graphics", "axis", "lines", "par", "plot", "polygon")
-
+# S3 Methods
 S3method(findwtdinteraction, default)
-S3method(findwtdinteraction, mira)
-S3method(findwtdinteraction, lmerMod)
 S3method(findwtdinteraction, list)
+S3method(findwtdinteraction, lmerMod)
+S3method(findwtdinteraction, mira)
 S3method(findwtdinteraction, multinom)
 S3method(plotinteractpreds, default)
 S3method(plotinteractpreds, interactpreds)
 S3method(plotinteractpreds, interactpredsmnl)
+S3method(coeffer, default)
+S3method(coeffer, lm)
+S3method(coeffer, gam)
+S3method(coeffer, glmerMod)
+S3method(coeffer, glmnet)
+S3method(coeffer, lmerMod)
+S3method(coeffer, multinom)
+S3method(coeffer, polr)
+S3method(findn, default)
+S3method(findn, gam)
+S3method(findn, glm)
+S3method(findn, glmerMod)
+S3method(findn, lm)
+S3method(findn, lmerMod)
+S3method(findn, multinom)
+S3method(findn, polr)
+S3method(print, findn)
+
+# Exported functions
+export(
+  coeffer,
+  dummify,
+  findn,
+  findwtdinteraction,
+  findwtdinteraction.default,
+  findwtdinteraction.list,
+  findwtdinteraction.lmerMod,
+  findwtdinteraction.mira,
+  findwtdinteraction.multinom,
+  nalevs,
+  onetable,
+  plotinteractpreds,
+  plotinteractpreds.default,
+  plotinteractpreds.interactpreds,
+  plotinteractpreds.interactpredsmnl,
+  plotwtdinteraction,
+  rd,
+  starmaker,
+  stdz,
+  wpct,
+  wtd.anova,
+  wtd.barplot,
+  wtd.boxplot,
+  wtd.chi.sq,
+  wtd.cor,
+  wtd.cov,
+  wtd.cors,
+  wtd.partial.cor,
+  wtd.partial.cov,
+  wtd.hist,
+  wtd.median,
+  wtd.quantile,
+  wtd.t.test,
+  wtd.violinplot,
+  wtd.xtab
+)
+
+# Imports
+importFrom(Hmisc, wtd.mean, wtd.table, wtd.var)
+importFrom(mice, pool.scalar)
+importFrom(gdata, drop.levels)
+importFrom(lme4, bootMer)
+importFrom(grDevices, gray, nclass.FD, nclass.Sturges, nclass.scott)
+importFrom(stats,
+  aov, approx, coef, cor, density, lm, median, model.matrix,
+  na.omit, pf, pchisq, predict, pt, quantile,
+  sd, var, weights, xtabs, AIC, complete.cases, nobs, pnorm, residuals, setNames)
+importFrom(graphics, axis, barplot, lines, par, plot, points, polygon, rect, segments)
+importFrom(utils, head)

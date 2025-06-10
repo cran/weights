@@ -41,7 +41,7 @@ bootp=FALSE, bootn=1000)
 A list with matrices for the estimated correlation coefficient, the standard error on that correlation coefficient, the t-value for that correlation coefficient, and the p value for the significance of the correlation.  If the list can be simplified, simplification will be done.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \seealso{
 \code{\link{wtd.cors}}

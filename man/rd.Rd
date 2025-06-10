@@ -19,7 +19,7 @@ rd(x, digits=2, add=TRUE, max=(digits+3))
 A vector of length equal to that of \code{x} of class \code{character}.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \examples{
 rd(seq(0, 1, by=.1))

@@ -1,4 +1,5 @@
 rd <- function(x, digits=2, add=TRUE, max=(digits+3)){
+    if (!is.numeric(x)) return(as.character(x))
   y <- round(x, digits=digits)
   yk <- format(y, nsmall=digits)
   nzero <- sum(unlist(y)==0)
@@ -14,5 +15,7 @@ rd <- function(x, digits=2, add=TRUE, max=(digits+3)){
     }
   }
   z <- sub("^([-]?)0[.]","\\1.", gsub(" +", "", yk))
+  if(digits==0)
+      z[z==".0"] <- "0"
   z
 }

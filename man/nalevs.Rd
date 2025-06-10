@@ -23,7 +23,7 @@ setmean=NULL, weight=NULL)
 A vector of length equal to that of \code{x} of class \code{numeric}.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \examples{
 data(anes04)

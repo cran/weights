@@ -1,0 +1,19 @@
+weights 1.1.0
+
+- Added Authors@R field for CRAN compliance.
+- Corrected Rd links to external packages (mice, mgcv).
+- Removed LazyLoad field.
+- Documentation cleanup and bug fixes.
+- Added `wtd.anova()` for weighted analysis of variance
+- Added `wtd.quantile()` and `wtd.median()` for weighted quantile estimation
+- Added `wtd.boxplot()`, `wtd.barplot()`, and `wtd.violinplot()` for visualizing weighted data
+- Added `wtd.xtab()` for structured 2-way and 3-way weighted cross-tabulations
+- Added `onetable()` for clean multi-model regression summaries
+- Added helper functions: `findn()` and `coeffer()` for extracting and formatting model outputs
+
+IMPROVEMENTS:
+- Enhanced internal consistency of weight scaling via `mean1 = TRUE`
+- Improved documentation across all new and existing functions
+
+NOTE:
+- These updates do not affect compiled code; no changes to the `src` directory were required.

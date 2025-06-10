@@ -50,7 +50,7 @@ bootn=1000, drops="pairwise")
 A list element with an identifier for the test; coefficients for the t value, degrees of freedom, and p value of the t-test; and additional statistics of potential interest.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).  Gene Culter added code for a one-tailed version of the test.
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).  Gene Culter added code for a one-tailed version of the test.
 }
 \seealso{
 \code{\link{stdz}}

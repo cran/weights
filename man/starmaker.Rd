@@ -18,7 +18,7 @@ starmaker(x, p.levels=c(.001, .01, .05, .1), symbols=c("***", "**", "*", "+"))
 A vector of length equal to that of \code{x} of class \code{character}.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \examples{
 starmaker(seq(0, .15, by=.01))

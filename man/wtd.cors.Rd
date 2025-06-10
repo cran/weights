@@ -24,7 +24,7 @@ wtd.cors(x, y=NULL, weight=NULL)
 A matrix of the estimated correlation coefficients.
 }
 \author{
-Marcus Schwemmle at GfK programmed the C code, R wrapper by Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Marcus Schwemmle at GfK programmed the C code, R wrapper by Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \seealso{
 \code{\link{wtd.cor}}

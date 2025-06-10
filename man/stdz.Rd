@@ -21,7 +21,7 @@ stdz(x, weight=NULL)
 A vector of length equal to x with a (weighted) mean of zero and a (weighted) standard deviation of 1.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \seealso{
 \code{\link{wtd.cor}}
@@ -35,8 +35,8 @@ weight <- c(.5,.5,.5,.5,.5,1,1,1,1,2,2,2,2,2)
 
 summary(stdz(test))
 summary(stdz(test, weight))
-wtd.mean(stdz(test, weight), weight)
-wtd.var(stdz(test, weight), weight)
+Hmisc::wtd.mean(stdz(test, weight), weight)
+Hmisc::wtd.var(stdz(test, weight), weight)
 }
 \keyword{ ~standardize }
 \keyword{ ~standardization }

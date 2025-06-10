@@ -20,14 +20,14 @@ wpct(x, weight=NULL, na.rm=TRUE, ...)
 If \code{na.rm} is true, missing data will be dropped.  If \code{na.rm} is false, missing data will return an error.
 }
 \item{...}{
-\code{...} (optional) Additional arguments to be passed on to \code{\link{wtd.table}}.
+\code{...} (optional) Additional arguments to be passed on to \code{\link[Hmisc]{wtd.table}}.
 }
 }
 \value{
 A table object of length equal to the number of separate values of \code{x}.
 }
 \author{
-Josh Pasek, Assistant Professor of Communication Studies at the University of Michigan (www.joshpasek.com).
+Josh Pasek, Professor of Communication & Media and Political Science at the University of Michigan (www.joshpasek.com).
 }
 \examples{
 test <- c(1,1,1,1,1,1,2,2,2,3,3,3,4,4)

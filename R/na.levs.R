@@ -2,8 +2,7 @@ na.levs <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NU
   UseMethod("na.levs")
 
 
-
-na.levs.factor <- function(x, naset=NULL, setmedian=NULL, setmode=NULL, weight=NULL){
+na.levs.factor <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NULL, setmedian=NULL, setmode=NULL, weight=NULL){
   x[x %in% naset] <- NA
   q <- (x %in% setmedian)
   r <- (x %in% setmode)
@@ -18,7 +17,7 @@ na.levs.factor <- function(x, naset=NULL, setmedian=NULL, setmode=NULL, weight=N
   x
 }
 
-na.levs.numeric <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NULL, weight=NULL){
+na.levs.numeric <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NULL, setmedian=NULL, setmode=NULL, weight=NULL){
   x[x %in% naset] <- NA
   q <- (x %in% setmid)
   r <- (x %in% set1)
@@ -40,7 +39,7 @@ na.levs.numeric <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, se
   x
 }
 
-na.levs.default <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NULL, weight=NULL){
+na.levs.default <- function(x, naset=NULL, setmid=NULL, set1=NULL, set0=NULL, setmean=NULL, setmedian=NULL, setmode=NULL, weight=NULL){
   x <- as.numeric(x)
   x[x %in% naset] <- NA
   q <- (x %in% setmid)
