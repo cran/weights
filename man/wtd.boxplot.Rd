@@ -22,7 +22,7 @@ wtd.boxplot(x, group = NULL, weight = NULL, show.outliers = TRUE,
 A base R graphic is produced showing weighted boxplots by group. No value is returned.
 }
 \seealso{
-\code{\link{boxplot}}, \code{\link{wtd.quantile}}, \code{\link{wtd.median}}
+\code{\link{boxplot}}, \code{\link[Hmisc]{wtd.quantile}}, \code{\link{wtd.median}}
 }
 \examples{
 set.seed(123)

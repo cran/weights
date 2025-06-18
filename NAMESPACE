@@ -60,14 +60,13 @@ export(
   wtd.partial.cov,
   wtd.hist,
   wtd.median,
-  wtd.quantile,
   wtd.t.test,
   wtd.violinplot,
   wtd.xtab
 )
 
 # Imports
-importFrom(Hmisc, wtd.mean, wtd.table, wtd.var)
+importFrom(Hmisc, wtd.mean, wtd.table, wtd.var, wtd.quantile)
 importFrom(mice, pool.scalar)
 importFrom(gdata, drop.levels)
 importFrom(lme4, bootMer)

@@ -1,7 +1,7 @@
 Package: weights
 Title: Weighting and Weighted Statistics
-Version: 1.1.1
-Date: 2025-05-13
+Version: 1.1.2
+Date: 2025-06-18
 Authors@R: c(person(given = "Josh",
                  family = "Pasek",
                  role = c("aut", "cre"),
@@ -28,7 +28,7 @@ License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 NeedsCompilation: yes
-Packaged: 2025-06-09 00:55:49 UTC; jpasek
+Packaged: 2025-06-18 15:42:32 UTC; jpasek
 Author: Josh Pasek [aut, cre] (ORCID: <https://orcid.org/0000-0001-6099-6119>),
   Alex Tahk [ctb] (ORCID: <https://orcid.org/0000-0001-7895-9420>),
   Gene Culter [ctb],
@@ -36,4 +36,4 @@ Author: Josh Pasek [aut, cre] (ORCID: <https://orcid.org/0000-0001-6099-6119>),
   Some code modified from R-core [ctb]
 Maintainer: Josh Pasek <josh@joshpasek.com>
 Repository: CRAN
-Date/Publication: 2025-06-10 13:10:02 UTC
+Date/Publication: 2025-06-18 16:10:02 UTC

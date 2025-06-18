@@ -16,7 +16,7 @@ wtd.median(x, weight = NULL, na.rm = TRUE)
 A single numeric value representing the weighted median.
 }
 \seealso{
-\code{\link{wtd.quantile}}, \code{\link{median}}
+\code{\link[Hmisc]{wtd.quantile}}, \code{\link{median}}
 }
 \examples{
 x <- c(1, 2, 3, 4, 5)
